@@ -6,36 +6,187 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.viktorrahmanovic.nrt4912.AddQuestionActivity"
+    android:layout_margin="5dp"
     android:orientation="vertical"
-    >
+    tools:context="com.viktorrahmanovic.nrt4912.AddQuestionActivity">
 
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-    <RadioButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:text="Text"
 
-        />
-    <RadioButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:text="Radio"
-        />
-    <RadioButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:text="Checkbox"
-        />
+        <RadioButton
+            android:id="@+id/rbText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:onClick="changeQuestionType"
+            android:text="Text"
+
+            />
+
+        <RadioButton
+            android:id="@+id/rbRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:onClick="changeQuestionType"
+            android:text="Radio" />
+
+        <RadioButton
+            android:id="@+id/rbCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:onClick="changeQuestionType"
+            android:text="Checkbox" />
     </RadioGroup>
 
+    <RelativeLayout
+        android:id="@+id/rlTextWrapperText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#555555">
 
+        <RelativeLayout
+            android:id="@+id/rlInputWrapperText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/tvTekstPitanjaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="#fff"
+                android:text="Tekst pitanja:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/tvTekstPitanjaText"
+                android:background="#222"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+
+                />
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/rlInputWrapperText"
+            android:onClick="nextQuestionClicked"
+            android:text="Prosledi" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlRadioWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff0000"
+        android:visibility="gone">
+
+
+        <RelativeLayout
+            android:id="@+id/rlInputWrapperRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTekstPitanjaRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="#fff"
+                android:text="Tekst pitanja:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/tvTekstPitanjaRadio"
+                android:background="#222"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlInputWrapperRadio"
+            android:text="Broj pitanja:"/>
+
+        <EditText
+            android:id="@+id/etNumberOfAnswersRadio"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/rlInputWrapperRadio"
+            android:background="#00ff00"
+            android:inputType="number"
+            android:maxLength="1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/llOptions"
+            android:orientation="vertical"
+            android:layout_below="@id/etNumberOfAnswersRadio">
+
+        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="nextQuestionClicked"
+            android:text="Prosledi" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlCheckboxWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0000ff"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rlInputWrapperCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTekstPitanjaCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="#fff"
+                android:text="Tekst pitanja:" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/tvTekstPitanjaCheckbox"
+                android:background="#222"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+
+                />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
 
 </LinearLayout>

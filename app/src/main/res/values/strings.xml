@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NRT4912</string>
+    <string name="title_activity_login">Login</string>
+    <string name="username">Username:</string>
+    <string name="passowrd">Passowrd:</string>
+    <string name="login">Login</string>
+</resources>

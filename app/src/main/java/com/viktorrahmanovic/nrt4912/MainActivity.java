@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,5 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(this,Login.class);
         startActivity(i);
+    }
+
+    public void AnswerQuestion(View view) {
+        Intent i = new Intent(this,AnswerQuestionActivity.class);
+        startActivity(i);
+
     }
 }

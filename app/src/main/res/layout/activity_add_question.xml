@@ -41,13 +41,14 @@
             android:layout_weight="0.5"
             android:onClick="changeQuestionType"
             android:text="Checkbox" />
+
+
     </RadioGroup>
 
     <RelativeLayout
         android:id="@+id/rlTextWrapperText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#555555">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/rlInputWrapperText"
@@ -60,7 +61,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:background="#fff"
                 android:text="Tekst pitanja:" />
 
             <EditText
@@ -68,9 +68,9 @@
                 android:layout_height="200dp"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/tvTekstPitanjaText"
-                android:background="#222"
                 android:gravity="top"
                 android:inputType="textMultiLine"
+                android:id="@+id/etTextQuestionText"
 
                 />
         </RelativeLayout>
@@ -81,7 +81,9 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/rlInputWrapperText"
             android:onClick="nextQuestionClicked"
-            android:text="Prosledi" />
+            android:text="Prosledi"
+
+            android:id="@+id/btnAddQuestionText"/>
 
 
     </RelativeLayout>
@@ -91,7 +93,6 @@
         android:id="@+id/rlRadioWrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ff0000"
         android:visibility="gone">
 
 
@@ -105,7 +106,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:background="#fff"
                 android:text="Tekst pitanja:" />
 
             <EditText
@@ -113,9 +113,9 @@
                 android:layout_height="200dp"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/tvTekstPitanjaRadio"
-                android:background="#222"
                 android:gravity="top"
                 android:inputType="textMultiLine"
+                android:id="@+id/etTextQuestionRadio"
 
                 />
         </RelativeLayout>
@@ -132,10 +132,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@id/rlInputWrapperRadio"
-            android:background="#00ff00"
             android:inputType="number"
             android:maxLength="1"
             />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -151,14 +151,14 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:onClick="nextQuestionClicked"
-            android:text="Prosledi" />
+            android:text="Prosledi"
+            android:id="@+id/btnAddQuestionRadio"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rlCheckboxWrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0000ff"
         android:visibility="gone">
 
         <RelativeLayout
@@ -171,7 +171,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:background="#fff"
                 android:text="Tekst pitanja:" />
 
             <EditText
@@ -179,12 +178,42 @@
                 android:layout_height="200dp"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/tvTekstPitanjaCheckbox"
-                android:background="#222"
                 android:gravity="top"
                 android:inputType="textMultiLine"
+                android:id="@+id/etTextQuestionCheckbox"
+
 
                 />
         </RelativeLayout>
+
+        <EditText
+            android:id="@+id/etNumberOfAnswersCheckbox"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/rlInputWrapperCheckbox"
+            android:inputType="number"
+            android:maxLength="1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/llOptionsCheckbox"
+            android:orientation="vertical"
+            android:layout_below="@id/etNumberOfAnswersCheckbox">
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="nextQuestionClicked"
+            android:text="Prosledi"
+            android:id="@+id/btnAddQuestionCheckbox"/>
+
 
 
     </RelativeLayout>

@@ -7,7 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ProfActivity extends AppCompatActivity {
+
+    public static ArrayList<Question> questions;
+    public static ArrayList<Question>[] answers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,7 @@ public class ProfActivity extends AppCompatActivity {
 
             Intent i = new Intent(this, AddQuestionActivity.class);
             i.putExtra("remainingQuestions",numberOfQuestions);
+            ProfActivity.questions = new ArrayList<>();
             startActivity(i);
         }else {
             Toast.makeText(this, "Unesite broj pitanja", Toast.LENGTH_SHORT).show();

@@ -23,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void AnswerQuestion(View view) {
+
         Intent i = new Intent(this,AnswerQuestionActivity.class);
+        i.putExtra("CurrentStudent", 0);
+
         startActivity(i);
 
     }

@@ -117,6 +117,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
     public void changeQuestionType(View view) {
 
+
         int i = view.getId();
         if(i == R.id.rbRadio) {
             findViewById(R.id.rlTextWrapperText).setVisibility(View.GONE);
@@ -138,7 +139,6 @@ public class AddQuestionActivity extends AppCompatActivity {
 
         finish();
 
-
         int i = view.getId();
         if(i == R.id.btnAddQuestionText) {
             String qText = ((EditText)findViewById(R.id.etTextQuestionText)).getText().toString();
@@ -153,7 +153,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
             String[] answers = new String[llOptions.getChildCount()];
             for(int j=0;j<llOptions.getChildCount();j++){
-                answers[i] = ((EditText)llOptions.getChildAt(i)).getText().toString();
+                answers[j] = ((EditText)llOptions.getChildAt(j)).getText().toString();
             }
 
             ProfActivity.questions.add(new RadioQuestion(qText,answers));
@@ -166,7 +166,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
             String[] answers = new String[llOptions.getChildCount()];
             for(int j=0;j<llOptions.getChildCount();j++){
-                answers[i] = ((EditText)llOptions.getChildAt(i)).getText().toString();
+                answers[j] = ((EditText)llOptions.getChildAt(j)).getText().toString();
             }
 
             ProfActivity.questions.add(new CheckboxQuestion(qText, answers));

@@ -15,4 +15,11 @@ public class RadioQuestion extends Question {
         super(questionText);
         this.answers = answers;
     }
+
+    public String[] getQuestions() {
+        return answers;
+
+    }
+
+
 }

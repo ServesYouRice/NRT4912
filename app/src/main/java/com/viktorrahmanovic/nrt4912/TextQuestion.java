@@ -11,4 +11,8 @@ public class TextQuestion extends Question {
     public TextQuestion(String questionText) {
         super(questionText);
     }
+
+    public void setAnswerText(String answerText) {
+        this.answerText = answerText;
+    }
 }

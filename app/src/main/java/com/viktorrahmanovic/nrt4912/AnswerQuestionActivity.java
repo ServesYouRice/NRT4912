@@ -1,6 +1,7 @@
 package com.viktorrahmanovic.nrt4912;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +44,7 @@ public class AnswerQuestionActivity extends AppCompatActivity {
         LinearLayout llRoot = ((LinearLayout)findViewById(R.id.llRoot));
         if(currentQuestion.getClass().equals(TextQuestion.class)){
             EditText etAnswer = new EditText(this);
+            etAnswer.setId(R.id.etAnswer);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500);
             etAnswer.setLayoutParams(lp);
             llRoot.addView(etAnswer);
@@ -56,6 +58,7 @@ public class AnswerQuestionActivity extends AppCompatActivity {
             int noOfAnswers = answers.length;
                     //((RadioQuestion) currentQuestion).getQuestions();
             RadioGroup rgAnswers = new RadioGroup(this);
+            rgAnswers.setId(R.id.rgAnswers);
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             rgAnswers.setLayoutParams(lp);
             llRoot.addView(rgAnswers);
@@ -69,10 +72,26 @@ public class AnswerQuestionActivity extends AppCompatActivity {
             }
 
         } else if (currentQuestion.getClass().equals(CheckboxQuestion.class)) {
-            CheckBox cbAnswer = new CheckBox(this);
-            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500);
-            cbAnswer.setLayoutParams(lp);
 
+            String[] answers = ((CheckboxQuestion)currentQuestion).getQuestions();
+            int noOfAnswers = answers.length;
+            //((RadioQuestion) currentQuestion).getQuestions();
+
+            LinearLayout llAnswers = new LinearLayout(this);
+            llAnswers.setOrientation(LinearLayout.VERTICAL);
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            llAnswers.setLayoutParams(lp);
+            llRoot.addView(llAnswers);
+
+            for (int j = 0; j<noOfAnswers; j++) {
+                CheckBox cbAnswer = new CheckBox(this);
+                cbAnswer.setText(answers[j]);
+                LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+             //   lp2.setMargins(0,0,0,0);
+                cbAnswer.setLayoutParams(lp2);
+                llAnswers.addView(cbAnswer);
+
+            }
         }
 
 
@@ -81,7 +100,25 @@ public class AnswerQuestionActivity extends AppCompatActivity {
 
     public void nextQuestionClicked(View view) {
 
-        finish();
+        Question currentQuestion = ProfActivity.answers[student].get(question);
+        if(currentQuestion.getClass().equals(TextQuestion.class)) {
+            EditText etAnswer = (EditText) findViewById(R.id.etAnswer);
+            ((TextQuestion)currentQuestion).setAnswerText(etAnswer.getText().toString());
+        }
+        else if (currentQuestion.getClass().equals(RadioQuestion.class)) {
+
+            RadioGroup rgAnswers = (RadioGroup) findViewById(R.id.rgAnswers);
+            RadioButton rbAnswer = (RadioButton) findViewById(rgAnswers.getCheckedRadioButtonId());
+            ((RadioQuestion)currentQuestion).setSelectedAnswer(rbAnswer.getText().toString());
+        }
+        else if (currentQuestion.getClass().equals(CheckboxQuestion.class)) {
+
+
+
+        }
+
+
+            finish();
         question++;
         if(question == ProfActivity.questions.size()){
             question=0;

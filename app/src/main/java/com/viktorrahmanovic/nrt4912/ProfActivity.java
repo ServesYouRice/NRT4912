@@ -13,6 +13,8 @@ public class ProfActivity extends AppCompatActivity {
 
     public static ArrayList<Question> questions;
     public static ArrayList<Question>[] answers;
+    public static ArrayList<String>[] newAnswers;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

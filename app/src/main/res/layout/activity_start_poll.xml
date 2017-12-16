@@ -26,9 +26,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/etNoStudents"
+        android:id="@+id/btnPocni"
         android:text="Pocni sa anketom"
         android:onClick="StartNewPoll"
         />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPocni"
+        android:text="Vidi odgovore"
+        android:onClick="ViewAllStudents"
+
+        />
 
 </RelativeLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -79,6 +80,8 @@ public class AnswerQuestionActivity extends AppCompatActivity {
 
             LinearLayout llAnswers = new LinearLayout(this);
             llAnswers.setOrientation(LinearLayout.VERTICAL);
+            llAnswers.setId(R.id.llAnswers);
+
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             llAnswers.setLayoutParams(lp);
             llRoot.addView(llAnswers);
@@ -113,19 +116,25 @@ public class AnswerQuestionActivity extends AppCompatActivity {
         }
         else if (currentQuestion.getClass().equals(CheckboxQuestion.class)) {
 
+            LinearLayout llAnswers = (LinearLayout) findViewById(R.id.llAnswers);
+            String[] selectedAnswers = new String[llAnswers.getChildCount()];
+            for (int i = 0,j=0; i < llAnswers.getChildCount(); i++) {
+                CheckBox cbCbc = (CheckBox) llAnswers.getChildAt(i);
+                if(cbCbc.isChecked()) {
+                    selectedAnswers[j++]= cbCbc.getText().toString();
+                }
+            }
 
+            ((CheckboxQuestion)currentQuestion).setSelectedAnswers(selectedAnswers);
 
         }
 
+        Log.d("Odgovori: ", ProfActivity.answers[student].toString());
 
             finish();
         question++;
         if(question == ProfActivity.questions.size()){
-            question=0;
-            student++;
-            if(student==ProfActivity.answers.length){
-                return;
-            }
+            return;
         }
 
         Intent intent = new Intent(this, AnswerQuestionActivity.class);

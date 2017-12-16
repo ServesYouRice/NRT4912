@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private int currentStudent = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +27,19 @@ public class MainActivity extends AppCompatActivity {
     public void AnswerQuestion(View view) {
 
         Intent i = new Intent(this,AnswerQuestionActivity.class);
-        i.putExtra("CurrentStudent", 0);
+        i.putExtra("CurrentStudent", currentStudent);
 
-        startActivity(i);
+        startActivityForResult(i,0);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        ((EditText)findViewById(R.id.etStudentUsername)).setText("");
+        currentStudent++;
+        if(currentStudent>=ProfActivity.answers.length) {
+           finish();
+        }
     }
 }

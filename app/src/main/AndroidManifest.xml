@@ -32,7 +32,9 @@
         <activity android:name=".AddQuestionActivity" />
         <activity android:name=".StartPollActivity" />
         <activity android:name=".AllQuestionsActivity" />
-        <activity android:name=".AnswerQuestionActivity"></activity>
+        <activity android:name=".AnswerQuestionActivity" />
+        <activity android:name=".ViewAllStudentsActivity" />
+        <activity android:name=".StudentsAnswersListActivity"></activity>
     </application>
 
 </manifest>

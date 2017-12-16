@@ -23,4 +23,12 @@
         android:text="Student"
         android:onClick="AnswerQuestion"/>
 
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etStudentUsername"
+        android:layout_above="@+id/btnStudent"
+        android:layout_centerInParent="true"
+        />
+
 </RelativeLayout>

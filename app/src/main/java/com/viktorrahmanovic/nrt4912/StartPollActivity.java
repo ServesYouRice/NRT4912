@@ -28,4 +28,10 @@ public class StartPollActivity extends AppCompatActivity {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
+
+    public void ViewAllStudents(View view) {
+        Intent i = new Intent(this, ViewAllStudentsActivity.class);
+        startActivity(i);
+
+    }
 }

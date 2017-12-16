@@ -27,8 +27,8 @@ public class CheckboxQuestion extends Question {
 
         this.selectedAnswers = new int[selectedAnswers.length];
         for (int i = 0, j = 0; i < answers.length; i++) {
-            for (int g = 0; g < selectedAnswers.length; g++) {
-                if (Objects.equals(answers[i], selectedAnswers[g])) {
+            for (String selectedAnswer : selectedAnswers) {
+                if (Objects.equals(answers[i], selectedAnswer)) {
                     this.selectedAnswers[j++] = i;
                 }
             }

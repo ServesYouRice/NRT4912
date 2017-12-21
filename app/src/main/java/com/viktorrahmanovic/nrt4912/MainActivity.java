@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this,AnswerQuestionActivity.class);
         i.putExtra("CurrentStudent", currentStudent);
 
+        String username =  ((EditText) findViewById(R.id.etStudentUsername)).getText().toString();
+        ProfActivity.students.add(username);
+
         startActivityForResult(i,0);
 
     }

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+
 public class ViewAllStudentsActivity extends AppCompatActivity {
 
     @Override
@@ -14,11 +16,13 @@ public class ViewAllStudentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_all_students);
 
+        ArrayList<String> studentsUsername = ProfActivity.students;
+
         LinearLayout llRoot = (LinearLayout) findViewById(R.id.llRoot);
 
         for(int i = 0; i < ProfActivity.answers.length; i++) {
             Button btnBtn = new Button(this);
-            btnBtn.setText(""+i);
+            btnBtn.setText(studentsUsername.get(i));
             llRoot.addView(btnBtn);
             final int studentId = i;
             btnBtn.setOnClickListener(new View.OnClickListener() {

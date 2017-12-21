@@ -13,7 +13,7 @@ public class ProfActivity extends AppCompatActivity {
 
     public static ArrayList<Question> questions;
     public static ArrayList<Question>[] answers;
-    public static ArrayList<String>[] newAnswers;
+    public static ArrayList<String> students;
 
 
     @Override
@@ -26,6 +26,7 @@ public class ProfActivity extends AppCompatActivity {
 
     public void create(View view) {
 
+        ProfActivity.students = new ArrayList<>();
         EditText editText = (EditText) findViewById(R.id.etNumberOfQuestions);
         String questionsNumber =editText.getText().toString();
         if(questionsNumber.length()>0) {
@@ -39,5 +40,8 @@ public class ProfActivity extends AppCompatActivity {
         }else {
             Toast.makeText(this, "Unesite broj pitanja", Toast.LENGTH_SHORT).show();
         }
+
+
+
     }
 }

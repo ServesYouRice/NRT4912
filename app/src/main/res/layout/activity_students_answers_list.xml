@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.viktorrahmanovic.nrt4912.StudentsAnswersListActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/etStudentUsernameAnswers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/llRoot">
+        android:text="HJKHSJdadhjk"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
 
 
-    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#888888">
+
+        <LinearLayout
+            android:id="@+id/llRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
 
 
-</ScrollView>
+    </ScrollView>
+
+
+</LinearLayout>

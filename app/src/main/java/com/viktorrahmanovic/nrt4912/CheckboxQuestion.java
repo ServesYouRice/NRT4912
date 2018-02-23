@@ -23,13 +23,26 @@ public class CheckboxQuestion extends Question {
 
     }
 
+    public String getSelectedAnswersText() {
+
+        String answersText= "";
+        for (int i=0; i<selectedAnswers.length;i++) {
+            if(selectedAnswers[i]>0) {
+                answersText += answers[i] + " ";
+            }
+        }
+
+        return answersText;
+    }
+
     public void setSelectedAnswers(String[] selectedAnswers) {
 
         this.selectedAnswers = new int[selectedAnswers.length];
-        for (int i = 0, j = 0; i < answers.length; i++) {
+        for (int i = 0; i < answers.length; i++) {
+            this.selectedAnswers[i]=0;
             for (String selectedAnswer : selectedAnswers) {
                 if (Objects.equals(answers[i], selectedAnswer)) {
-                    this.selectedAnswers[j++] = i;
+                    this.selectedAnswers[i] = 1;
                 }
             }
         }

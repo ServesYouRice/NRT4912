@@ -55,7 +55,7 @@ public class AnswerQuestionActivity extends AppCompatActivity {
         } else if (currentQuestion.getClass().equals(RadioQuestion.class)) {
 
 
-            String[] answers = ((RadioQuestion)currentQuestion).getQuestions();
+            String[] answers = ((RadioQuestion)currentQuestion).getAnswers();
             int noOfAnswers = answers.length;
                     //((RadioQuestion) currentQuestion).getQuestions();
             RadioGroup rgAnswers = new RadioGroup(this);

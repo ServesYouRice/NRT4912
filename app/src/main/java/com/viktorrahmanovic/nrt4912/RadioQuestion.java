@@ -18,8 +18,18 @@ public class RadioQuestion extends Question {
         this.answers = answers;
     }
 
-    public String[] getQuestions() {
+    public String[] getAnswers() {
         return answers;
+
+    }
+
+    public int getSelectedAnswer() {
+        return selectedAnswer;
+    }
+
+    public String getSelectedAnswerText() {
+        return answers[selectedAnswer];
+
 
     }
 

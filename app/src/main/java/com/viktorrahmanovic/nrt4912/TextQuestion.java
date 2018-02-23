@@ -12,6 +12,11 @@ public class TextQuestion extends Question {
         super(questionText);
     }
 
+    public String getAnswerText() {
+        return answerText;
+    }
+
+
     public void setAnswerText(String answerText) {
         this.answerText = answerText;
     }

@@ -20,15 +20,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/rbText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:onClick="changeQuestionType"
-            android:text="Text"
+        <!--<RadioButton-->
+            <!--android:id="@+id/rbText"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:onClick="changeQuestionType"-->
+            <!--android:text="Text"-->
 
-            />
+            <!--/>-->
 
         <RadioButton
             android:id="@+id/rbRadio"
@@ -49,56 +49,56 @@
 
     </RadioGroup>
 
-    <RelativeLayout
-        android:id="@+id/rlTextWrapperText"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/rlTextWrapperText"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center">-->
 
-        <RelativeLayout
-            android:id="@+id/rlInputWrapperText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <TextView
-                android:id="@+id/tvTekstPitanjaText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="Tekst pitanja:" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/tvTekstPitanjaText"
-                android:gravity="top"
-                android:inputType="textMultiLine"
-                android:id="@+id/etTextQuestionText"
-
-                />
-        </RelativeLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/rlInputWrapperText"
-            android:onClick="nextQuestionClicked"
-            android:text="Prosledi"
-
-            android:id="@+id/btnAddQuestionText"/>
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/rlInputWrapperText"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
 
 
-    </RelativeLayout>
+            <!--<TextView-->
+                <!--android:id="@+id/tvTekstPitanjaText"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="Tekst pitanja:" />-->
+
+            <!--<EditText-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_toRightOf="@+id/tvTekstPitanjaText"-->
+                <!--android:gravity="top"-->
+                <!--android:inputType="textMultiLine"-->
+                <!--android:id="@+id/etTextQuestionText"-->
+
+                <!--/>-->
+        <!--</RelativeLayout>-->
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_below="@id/rlInputWrapperText"-->
+            <!--android:onClick="nextQuestionClicked"-->
+            <!--android:text="Prosledi"-->
+
+            <!--android:id="@+id/btnAddQuestionText"/>-->
+
+
+    <!--</RelativeLayout>-->
 
 
     <RelativeLayout
         android:id="@+id/rlRadioWrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        >
 
 
         <RelativeLayout

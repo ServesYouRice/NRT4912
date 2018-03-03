@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/LogoSkolePNG"
+        android:src="@mipmap/logo_skole_full"
         android:layout_marginHorizontal="10dp"
         />
 
@@ -67,7 +67,7 @@
         android:layout_below="@id/btnVidiOdgovore"
         android:id="@+id/btnStatistika"
         android:text="Statistika"
-        android:onClick="ViewAllStudents"
+        android:onClick="ButtonsStatisticClicked"
         android:layout_marginBottom="10dp"
         />
 

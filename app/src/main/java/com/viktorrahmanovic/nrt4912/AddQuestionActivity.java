@@ -21,7 +21,7 @@ public class AddQuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_question);
 
-        RadioButton rb = (RadioButton) findViewById(R.id.rbText);
+        RadioButton rb = (RadioButton) findViewById(R.id.rbRadio);
         rb.setChecked(true);
 
         Intent i = getIntent();
@@ -120,16 +120,16 @@ public class AddQuestionActivity extends AppCompatActivity {
 
         int i = view.getId();
         if(i == R.id.rbRadio) {
-            findViewById(R.id.rlTextWrapperText).setVisibility(View.GONE);
+//            findViewById(R.id.rlTextWrapperText).setVisibility(View.GONE);
             findViewById(R.id.rlRadioWrapper).setVisibility(View.VISIBLE);
             findViewById(R.id.rlCheckboxWrapper).setVisibility(View.GONE);
-        } else if (i == R.id.rbText) {
-            findViewById(R.id.rlTextWrapperText).setVisibility(View.VISIBLE);
-            findViewById(R.id.rlRadioWrapper).setVisibility(View.GONE);
-            findViewById(R.id.rlCheckboxWrapper).setVisibility(View.GONE);
+//        } else if (i == R.id.rbText) {
+//            findViewById(R.id.rlTextWrapperText).setVisibility(View.VISIBLE);
+//            findViewById(R.id.rlRadioWrapper).setVisibility(View.GONE);
+//            findViewById(R.id.rlCheckboxWrapper).setVisibility(View.GONE);
 
         } else if (i == R.id.rbCheckbox) {
-            findViewById(R.id.rlTextWrapperText).setVisibility(View.GONE);
+//            findViewById(R.id.rlTextWrapperText).setVisibility(View.GONE);
             findViewById(R.id.rlRadioWrapper).setVisibility(View.GONE);
             findViewById(R.id.rlCheckboxWrapper).setVisibility(View.VISIBLE);
         }
@@ -140,10 +140,10 @@ public class AddQuestionActivity extends AppCompatActivity {
         finish();
 
         int i = view.getId();
-        if(i == R.id.btnAddQuestionText) {
-            String qText = ((EditText)findViewById(R.id.etTextQuestionText)).getText().toString();
-            ProfActivity.questions.add(new TextQuestion(qText));
-        }
+//        if(i == R.id.btnAddQuestionText) {
+//            String qText = ((EditText)findViewById(R.id.etTextQuestionText)).getText().toString();
+//            ProfActivity.questions.add(new TextQuestion(qText));
+//        }
 
         if(i == R.id.btnAddQuestionRadio) {
             String qText = ((EditText)findViewById(R.id.etTextQuestionRadio)).getText().toString();

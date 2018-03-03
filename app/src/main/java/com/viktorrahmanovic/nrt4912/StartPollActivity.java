@@ -34,4 +34,9 @@ public class StartPollActivity extends AppCompatActivity {
         startActivity(i);
 
     }
+
+    public void ButtonsStatisticClicked(View view) {
+        Intent i = new Intent(this, Statistics.class);
+        startActivity(i);
+    }
 }

@@ -35,6 +35,10 @@ public class CheckboxQuestion extends Question {
         return answersText;
     }
 
+    public int[] getSelectedAnswers() {
+        return selectedAnswers;
+    }
+
     public void setSelectedAnswers(String[] selectedAnswers) {
 
         this.selectedAnswers = new int[selectedAnswers.length];

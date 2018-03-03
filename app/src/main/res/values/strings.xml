@@ -4,4 +4,6 @@
     <string name="username">Username:</string>
     <string name="passowrd">Passowrd:</string>
     <string name="login">Login</string>
+    <color name="background">#a6c5cc</color>
+
 </resources>

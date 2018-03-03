@@ -8,6 +8,8 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:orientation="vertical"
+    android:background="@color/background"
+
     tools:context="com.viktorrahmanovic.nrt4912.AddQuestionActivity">
 
 
@@ -48,7 +50,8 @@
     <RelativeLayout
         android:id="@+id/rlTextWrapperText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center">
 
         <RelativeLayout
             android:id="@+id/rlInputWrapperText"
@@ -65,7 +68,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/tvTekstPitanjaText"
                 android:gravity="top"

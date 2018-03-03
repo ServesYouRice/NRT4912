@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.viktorrahmanovic.nrt4912.AnswerQuestionActivity"
     android:orientation="vertical"
+    android:background="@color/background"
+
     android:id="@+id/rlRoot">
 
 

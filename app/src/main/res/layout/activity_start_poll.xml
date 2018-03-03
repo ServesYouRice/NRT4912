@@ -4,22 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+
     tools:context="com.viktorrahmanovic.nrt4912.StartPollActivity">
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        >
+
+
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Pogledaj Pitanja"
         android:id="@+id/btnAllQuestions"
-        android:onClick="allQustionsClicked"/>
+        android:onClick="allQustionsClicked"
+        android:layout_marginBottom="40dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnAllQuestions"
+        android:gravity="center"
         android:hint="Unesite broj studenata"
         android:id="@+id/etNoStudents"
         android:inputType="number"
+
         />
 
     <Button
@@ -29,15 +43,28 @@
         android:id="@+id/btnPocni"
         android:text="Pocni sa anketom"
         android:onClick="StartNewPoll"
+        android:layout_marginBottom="40dp"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnPocni"
+        android:id="@+id/btnVidiOdgovore"
         android:text="Vidi odgovore"
         android:onClick="ViewAllStudents"
-
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnVidiOdgovore"
+        android:id="@+id/btnStatistika"
+        android:text="Statistika"
+        android:onClick="ViewAllStudents"
+        android:layout_marginBottom="10dp"
+        />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

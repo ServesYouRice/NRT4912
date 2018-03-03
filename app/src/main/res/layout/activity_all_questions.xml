@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.viktorrahmanovic.nrt4912.AllQuestionsActivity"
     android:id="@+id/llRoot"
+    android:background="@color/background"
+
     android:orientation="vertical">
 
 </LinearLayout>

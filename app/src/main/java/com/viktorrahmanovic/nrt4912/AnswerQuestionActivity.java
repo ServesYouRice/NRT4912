@@ -40,7 +40,7 @@ public class AnswerQuestionActivity extends AppCompatActivity {
         Question currentQuestion = ProfActivity.answers[student].get(question);
         // postavljamo Interface
 
-        ((TextView)findViewById(R.id.tvQuestion)).setText(currentQuestion.getQuestionText());
+        ((TextView)findViewById(R.id.tvQuestion)).setText("Pitanje: " + currentQuestion.getQuestionText());
 
         LinearLayout llRoot = ((LinearLayout)findViewById(R.id.llRoot));
         if(currentQuestion.getClass().equals(TextQuestion.class)){

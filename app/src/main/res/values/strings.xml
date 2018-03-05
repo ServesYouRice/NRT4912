@@ -2,9 +2,10 @@
     <string name="app_name">NRT4912</string>
     <string name="title_activity_login">Login</string>
     <string name="username">Username:</string>
-    <string name="passowrd">Passowrd:</string>
+    <string name="passowrd">Password:</string>
     <string name="login">Login</string>
     <color name="background">#a6c5cc</color>
+    <color name="edittextbg">#b8dae2</color>
     <color name="a">#f0f5f7</color>
     <color name="b">#dee9ec</color>
     <color name="c">#d1e2e5</color>

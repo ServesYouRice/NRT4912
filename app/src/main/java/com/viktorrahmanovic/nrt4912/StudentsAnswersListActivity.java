@@ -34,24 +34,27 @@ public class StudentsAnswersListActivity extends AppCompatActivity {
 
             Question currentQuestion = ProfActivity.answers[studentId].get(i);
             TextView tvQuestion = new TextView(this);
-            tvQuestion.setText((i + 1) + ". " + currentQuestion.getQuestionText());
+            tvQuestion.setText((i + 1) + ". " + currentQuestion.getQuestionText() + "\n");
+            tvQuestion.setTextSize(18);
+            tvQuestion.setPadding(10,10,10,10);
             llQuestion.addView(tvQuestion);
 
             Question currentAnswer = ProfActivity.answers[studentId].get(i);
             TextView tvAnswer = new TextView(this);
+            tvAnswer.setTextSize(18);
             llQuestion.addView(tvAnswer);
 
             if (currentAnswer.getClass().equals(TextQuestion.class)) {
-                tvAnswer.setText("Odgovor: " + ((TextQuestion) currentAnswer).getAnswerText());
+                tvAnswer.setText("\nOdgovor: " + ((TextQuestion) currentAnswer).getAnswerText());
 
             } else if (currentAnswer.getClass().equals(RadioQuestion.class)) {
 
-                tvAnswer.setText("Odgovor: " + ((RadioQuestion) currentAnswer).getSelectedAnswerText());
+                tvAnswer.setText("\nOdgovor: " + ((RadioQuestion) currentAnswer).getSelectedAnswerText());
 //                      ((RadioQuestion)currentAnswer).getAnswers()[((RadioQuestion)currentAnswer).getSelectedAnswer()]);
 
             } else if (currentAnswer.getClass().equals(CheckboxQuestion.class)) {
 
-                tvAnswer.setText("Odgovor: " + ((CheckboxQuestion) currentAnswer).getSelectedAnswersText());
+                tvAnswer.setText("\nOdgovor: " + ((CheckboxQuestion) currentAnswer).getSelectedAnswersText());
 
 
 

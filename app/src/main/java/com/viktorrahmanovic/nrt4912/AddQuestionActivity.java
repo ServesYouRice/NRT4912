@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -29,7 +30,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
 //        Toast.makeText(this, ""+q, Toast.LENGTH_SHORT).show();
 
-        final EditText etNumberOfAnswersRadio = (EditText)findViewById(R.id.etNumberOfAnswersRadio);
+        final EditText etNumberOfAnswersRadio = (EditText) findViewById(R.id.etNumberOfAnswersRadio);
         etNumberOfAnswersRadio.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -46,12 +47,12 @@ public class AddQuestionActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
-                LinearLayout llOptions = (LinearLayout)findViewById(R.id.llOptions);
+                LinearLayout llOptions = (LinearLayout) findViewById(R.id.llOptions);
                 llOptions.removeAllViewsInLayout();
-                if(editable.length()!=0) {
+                if (editable.length() != 0) {
                     String s = editable.toString();
                     int br = Integer.parseInt(s);
-                    Toast.makeText(AddQuestionActivity.this, s, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(AddQuestionActivity.this, s, Toast.LENGTH_SHORT).show();
 
 //                    LinearLayout llOptions = new LinearLayout(getApplicationContext());
 //                    llOptions.setId();
@@ -59,18 +60,28 @@ public class AddQuestionActivity extends AppCompatActivity {
 //                    llOptions.setOrientation(LinearLayout.VERTICAL);
 //                    ((RelativeLayout) findViewById(R.id.rlRadioWrapper)).addView(llOptions);
 
-                    for (int i = 0; i < br; i++) {
-                        EditText etOption = new EditText(getApplicationContext());
-                        etOption.setHint("Naziv opcije " + (i + 1));
-                        llOptions.addView(etOption);
-                    }
+                    if (br > 1) {
+
+                        for (int i = 0; i < br; i++) {
+                            EditText etOption = new EditText(getApplicationContext());
+                            etOption.setHint("Naziv opcije " + (i + 1));
+//                            if(i==br) {
+//                                etOption.setImeOptions(EditorInfo.IME_ACTION_DONE);
+//                            } else
+                            etOption.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+                            etOption.setSingleLine();
+                            llOptions.addView(etOption);
+                        }
+
+                    } else
+                        Toast.makeText(AddQuestionActivity.this, "Unesite broj veci od 1.", Toast.LENGTH_SHORT).show();
 
                 }
             }
 
         });
 
-        final EditText etNumberOfAnswersCheckbox = (EditText)findViewById(R.id.etNumberOfAnswersCheckbox);
+        final EditText etNumberOfAnswersCheckbox = (EditText) findViewById(R.id.etNumberOfAnswersCheckbox);
         etNumberOfAnswersCheckbox.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -87,12 +98,12 @@ public class AddQuestionActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
-                LinearLayout llOptions = (LinearLayout)findViewById(R.id.llOptionsCheckbox);
+                LinearLayout llOptions = (LinearLayout) findViewById(R.id.llOptionsCheckbox);
                 llOptions.removeAllViewsInLayout();
-                if(editable.length()!=0) {
+                if (editable.length() != 0) {
                     String s = editable.toString();
                     int br = Integer.parseInt(s);
-                    Toast.makeText(AddQuestionActivity.this, s, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(AddQuestionActivity.this, s, Toast.LENGTH_SHORT).show();
 
 //                    LinearLayout llOptions = new LinearLayout(getApplicationContext());
 //                    llOptions.setId();
@@ -100,11 +111,21 @@ public class AddQuestionActivity extends AppCompatActivity {
 //                    llOptions.setOrientation(LinearLayout.VERTICAL);
 //                    ((RelativeLayout) findViewById(R.id.rlRadioWrapper)).addView(llOptions);
 
-                    for (int i = 0; i < br; i++) {
-                        EditText etOption = new EditText(getApplicationContext());
-                        etOption.setHint("Naziv opcije " + (i + 1));
-                        llOptions.addView(etOption);
-                    }
+                    if (br > 1) {
+
+                        for (int i = 0; i < br; i++) {
+                            EditText etOption = new EditText(getApplicationContext());
+                            etOption.setHint("Naziv opcije " + (i + 1));
+//                            if(i==br) {
+//                                etOption.setImeOptions(EditorInfo.IME_ACTION_DONE);
+//                            } else
+                            etOption.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+                            etOption.setSingleLine();
+                            llOptions.addView(etOption);
+                        }
+                    } else
+                        Toast.makeText(AddQuestionActivity.this, "Unesite broj veci od 1.", Toast.LENGTH_SHORT).show();
+
 
                 }
             }
@@ -119,7 +140,7 @@ public class AddQuestionActivity extends AppCompatActivity {
 
 
         int i = view.getId();
-        if(i == R.id.rbRadio) {
+        if (i == R.id.rbRadio) {
 //            findViewById(R.id.rlTextWrapperText).setVisibility(View.GONE);
             findViewById(R.id.rlRadioWrapper).setVisibility(View.VISIBLE);
             findViewById(R.id.rlCheckboxWrapper).setVisibility(View.GONE);
@@ -145,44 +166,42 @@ public class AddQuestionActivity extends AppCompatActivity {
 //            ProfActivity.questions.add(new TextQuestion(qText));
 //        }
 
-        if(i == R.id.btnAddQuestionRadio) {
-            String qText = ((EditText)findViewById(R.id.etTextQuestionRadio)).getText().toString();
+        if (i == R.id.btnAddQuestionRadio) {
+            String qText = ((EditText) findViewById(R.id.etTextQuestionRadio)).getText().toString();
 
-            LinearLayout llOptions = (LinearLayout)findViewById(R.id.llOptions);
+            LinearLayout llOptions = (LinearLayout) findViewById(R.id.llOptions);
 
 
             String[] answers = new String[llOptions.getChildCount()];
-            for(int j=0;j<llOptions.getChildCount();j++){
-                answers[j] = ((EditText)llOptions.getChildAt(j)).getText().toString();
+            for (int j = 0; j < llOptions.getChildCount(); j++) {
+                answers[j] = ((EditText) llOptions.getChildAt(j)).getText().toString();
             }
 
-            ProfActivity.questions.add(new RadioQuestion(qText,answers));
+            ProfActivity.questions.add(new RadioQuestion(qText, answers));
         }
 
-        if(i == R.id.btnAddQuestionCheckbox) {
-            String qText = ((EditText)findViewById(R.id.etTextQuestionCheckbox)).getText().toString();
-            LinearLayout llOptions = (LinearLayout)findViewById(R.id.llOptionsCheckbox);
+        if (i == R.id.btnAddQuestionCheckbox) {
+            String qText = ((EditText) findViewById(R.id.etTextQuestionCheckbox)).getText().toString();
+            LinearLayout llOptions = (LinearLayout) findViewById(R.id.llOptionsCheckbox);
 
 
             String[] answers = new String[llOptions.getChildCount()];
-            for(int j=0;j<llOptions.getChildCount();j++){
-                answers[j] = ((EditText)llOptions.getChildAt(j)).getText().toString();
+            for (int j = 0; j < llOptions.getChildCount(); j++) {
+                answers[j] = ((EditText) llOptions.getChildAt(j)).getText().toString();
             }
 
             ProfActivity.questions.add(new CheckboxQuestion(qText, answers));
         }
 
-        if(--questionsRemaining>0) {
+        if (--questionsRemaining > 0) {
             Intent intent = new Intent(this, AddQuestionActivity.class);
 
             intent.putExtra("remainingQuestions", questionsRemaining);
             startActivity(intent);
-        }else{
-            Intent intent = new Intent(this,StartPollActivity.class);
+        } else {
+            Intent intent = new Intent(this, StartPollActivity.class);
             startActivity(intent);
         }
-
-
 
 
     }

@@ -6,7 +6,7 @@ import java.util.Objects;
  * Created by aca on 21/10/17.
  */
 
-public class RadioQuestion extends Question {
+public class RadioQuestion extends Question  {
 
     private String[] answers;
     private int selectedAnswer;
@@ -23,8 +23,8 @@ public class RadioQuestion extends Question {
 
     }
 
-    public int getSelectedAnswer() {
-        return selectedAnswer;
+    public int[] getSelectedAnswers() {
+        return new int[selectedAnswer];
     }
 
     public String getSelectedAnswerText() {
@@ -39,5 +39,10 @@ public class RadioQuestion extends Question {
                 this.selectedAnswer = i;
             }
         }
+    }
+
+    @Override
+    public int getNoOfAnswers() {
+        return answers.length;
     }
 }

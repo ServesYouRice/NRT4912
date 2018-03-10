@@ -4,7 +4,7 @@ package com.viktorrahmanovic.nrt4912;
  * Created by aca on 21/10/17.
  */
 
-public class Question {
+public abstract class Question {
 
     private String questionText;
 
@@ -15,5 +15,9 @@ public class Question {
     public String getQuestionText() {
         return questionText;
     }
+
+    abstract public int getNoOfAnswers();
+    abstract public int[] getSelectedAnswers();
+    abstract public String[] getAnswers();
 
 }

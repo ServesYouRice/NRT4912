@@ -1,7 +1,6 @@
 package com.viktorrahmanovic.nrt4912;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +13,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class AnswerQuestionActivity extends AppCompatActivity {
 
@@ -57,7 +55,7 @@ public class AnswerQuestionActivity extends AppCompatActivity {
 
             String[] answers = ((RadioQuestion)currentQuestion).getAnswers();
             int noOfAnswers = answers.length;
-                    //((RadioQuestion) currentQuestion).getQuestions();
+                    //((RadioQuestion) currentQuestion).getAnswers();
             RadioGroup rgAnswers = new RadioGroup(this);
             rgAnswers.setId(R.id.rgAnswers);
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -74,9 +72,9 @@ public class AnswerQuestionActivity extends AppCompatActivity {
 
         } else if (currentQuestion.getClass().equals(CheckboxQuestion.class)) {
 
-            String[] answers = ((CheckboxQuestion)currentQuestion).getQuestions();
+            String[] answers = ((CheckboxQuestion)currentQuestion).getAnswers();
             int noOfAnswers = answers.length;
-            //((RadioQuestion) currentQuestion).getQuestions();
+            //((RadioQuestion) currentQuestion).getAnswers();
 
             LinearLayout llAnswers = new LinearLayout(this);
             llAnswers.setOrientation(LinearLayout.VERTICAL);

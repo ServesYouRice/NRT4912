@@ -1,5 +1,6 @@
 package com.viktorrahmanovic.nrt4912;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ public class StudentsAnswersListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students_answers_list);
 
+        Intent intent = getIntent();
+        studentId = intent.getIntExtra("StudentID",0);
         LinearLayout llRoot = (LinearLayout) findViewById(R.id.llRoot);
         //  TextView tvTv = new TextView(this);
         ArrayList<Question>[] answers = ProfActivity.answers;

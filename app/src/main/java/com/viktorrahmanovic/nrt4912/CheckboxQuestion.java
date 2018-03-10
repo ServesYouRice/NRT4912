@@ -18,7 +18,7 @@ public class CheckboxQuestion extends Question {
     }
 
 
-    public String[] getQuestions() {
+    public String[] getAnswers() {
         return answers;
 
     }
@@ -52,4 +52,8 @@ public class CheckboxQuestion extends Question {
         }
     }
 
+    @Override
+    public int getNoOfAnswers() {
+        return answers.length;
+    }
 }

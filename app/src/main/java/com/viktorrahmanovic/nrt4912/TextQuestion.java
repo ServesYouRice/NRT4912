@@ -12,6 +12,21 @@ public class TextQuestion extends Question {
         super(questionText);
     }
 
+    @Override
+    public int getNoOfAnswers() {
+        return 0;
+    }
+
+    @Override
+    public int[] getSelectedAnswers() {
+        return new int[0];
+    }
+
+    @Override
+    public String[] getAnswers() {
+        return new String[0];
+    }
+
     public String getAnswerText() {
         return answerText;
     }

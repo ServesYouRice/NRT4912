@@ -52,12 +52,12 @@ public class StudentsAnswersListActivity extends AppCompatActivity {
 
             } else if (currentAnswer.getClass().equals(RadioQuestion.class)) {
 
-                tvAnswer.setText("\nOdgovor: " + ((RadioQuestion) currentAnswer).getSelectedAnswerText());
+                tvAnswer.setText("Odgovor: " + ((RadioQuestion) currentAnswer).getSelectedAnswerText());
 //                      ((RadioQuestion)currentAnswer).getAnswers()[((RadioQuestion)currentAnswer).getSelectedAnswer()]);
 
             } else if (currentAnswer.getClass().equals(CheckboxQuestion.class)) {
 
-                tvAnswer.setText("\nOdgovor: " + ((CheckboxQuestion) currentAnswer).getSelectedAnswersText());
+                tvAnswer.setText("Odgovor: " + ((CheckboxQuestion) currentAnswer).getSelectedAnswersText());
 
 
 

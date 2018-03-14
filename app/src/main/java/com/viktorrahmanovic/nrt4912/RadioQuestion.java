@@ -24,7 +24,9 @@ public class RadioQuestion extends Question  {
     }
 
     public int[] getSelectedAnswers() {
-        return new int[selectedAnswer];
+        int[] selected = new int[answers.length];
+        selected[selectedAnswer]=1;
+        return selected;
     }
 
     public String getSelectedAnswerText() {

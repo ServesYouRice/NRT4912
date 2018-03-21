@@ -37,6 +37,8 @@ public class StudentsAnswersListActivity extends AppCompatActivity {
 
             Question currentQuestion = ProfActivity.answers[studentId].get(i);
             TextView tvQuestion = new TextView(this);
+            tvQuestion.setSingleLine(false);
+            tvQuestion.setLines(3);
             tvQuestion.setText((i + 1) + ". " + currentQuestion.getQuestionText() + "\n");
             tvQuestion.setTextSize(18);
             tvQuestion.setPadding(10,10,10,10);

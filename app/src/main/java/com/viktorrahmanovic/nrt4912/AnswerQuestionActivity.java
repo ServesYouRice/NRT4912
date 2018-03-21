@@ -14,6 +14,8 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class AnswerQuestionActivity extends AppCompatActivity {
 
     int student;
@@ -31,9 +33,13 @@ public class AnswerQuestionActivity extends AppCompatActivity {
         question = i.getIntExtra("CurrentQuestion", 0);
 
 
-        if (question == 0)
-            ProfActivity.answers[student] = ProfActivity.questions;
-
+        if (question == 0) {
+            ProfActivity.answers[student] = new ArrayList<>();
+            for (int j = 0; j<ProfActivity.questions.size();j++) {
+                Question q = ProfActivity.questions.get(j).copy();
+                ProfActivity.answers[student].add(q);
+            }
+        }
 
         Question currentQuestion = ProfActivity.answers[student].get(question);
         // postavljamo Interface
@@ -102,6 +108,7 @@ public class AnswerQuestionActivity extends AppCompatActivity {
     public void nextQuestionClicked(View view) {
 
         Question currentQuestion = ProfActivity.answers[student].get(question);
+
         if(currentQuestion.getClass().equals(TextQuestion.class)) {
             EditText etAnswer = (EditText) findViewById(R.id.etAnswer);
             ((TextQuestion)currentQuestion).setAnswerText(etAnswer.getText().toString());

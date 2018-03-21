@@ -44,6 +44,11 @@ public class RadioQuestion extends Question  {
     }
 
     @Override
+    public Question copy() {
+        return new RadioQuestion(getQuestionText(), answers);
+    }
+
+    @Override
     public int getNoOfAnswers() {
         return answers.length;
     }

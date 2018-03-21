@@ -27,6 +27,11 @@ public class TextQuestion extends Question {
         return new String[0];
     }
 
+    @Override
+    public Question copy() {
+        return null;
+    }
+
     public String getAnswerText() {
         return answerText;
     }

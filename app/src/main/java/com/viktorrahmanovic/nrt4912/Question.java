@@ -19,5 +19,6 @@ public abstract class Question {
     abstract public int getNoOfAnswers();
     abstract public int[] getSelectedAnswers();
     abstract public String[] getAnswers();
+    abstract public Question copy();
 
 }

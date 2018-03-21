@@ -23,6 +23,11 @@ public class CheckboxQuestion extends Question {
 
     }
 
+    @Override
+    public Question copy() {
+        return new CheckboxQuestion(getQuestionText(), answers);
+    }
+
     public String getSelectedAnswersText() {
 
         String answersText= "";

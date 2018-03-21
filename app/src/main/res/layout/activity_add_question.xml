@@ -129,10 +129,11 @@
                     android:layout_height="100dp"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@+id/tvTekstPitanjaRadio"
-                    android:background="@color/edittextbg"
+                    android:background="@drawable/borders"
                     android:gravity="top"
                     android:imeOptions="actionNext"
                     android:inputType="textMultiLine"
+
 
                     />
             </RelativeLayout>

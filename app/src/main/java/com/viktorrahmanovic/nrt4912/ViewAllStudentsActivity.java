@@ -20,6 +20,8 @@ public class ViewAllStudentsActivity extends AppCompatActivity {
 
         LinearLayout llRoot = (LinearLayout) findViewById(R.id.llRoot);
 
+
+
         for(int i = 0; i < ProfActivity.answers.length; i++) {
             Button btnBtn = new Button(this);
             btnBtn.setText(studentsUsername.get(i));
@@ -29,7 +31,8 @@ public class ViewAllStudentsActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getApplicationContext(), StudentsAnswersListActivity.class);
-                    intent.putExtra("StudentID", studentId);
+
+                    intent.putExtra("StudentID",studentId);
                     startActivity(intent);
                 }
             });

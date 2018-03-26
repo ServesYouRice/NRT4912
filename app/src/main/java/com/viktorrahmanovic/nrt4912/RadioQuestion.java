@@ -2,9 +2,6 @@ package com.viktorrahmanovic.nrt4912;
 
 import java.util.Objects;
 
-/**
- * Created by aca on 21/10/17.
- */
 
 public class RadioQuestion extends Question  {
 

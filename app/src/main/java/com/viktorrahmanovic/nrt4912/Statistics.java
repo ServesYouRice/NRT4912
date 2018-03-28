@@ -143,7 +143,10 @@ public class Statistics extends AppCompatActivity {
 
         for (int i = 0; i < ProfActivity.questions.size(); i++) {
             TextView tvPitanje = new TextView(this);
-            tvPitanje.setText(ProfActivity.questions.get(i).getQuestionText());
+            tvPitanje.setText((i + 1) + ". " + ProfActivity.questions.get(i).getQuestionText());
+            tvPitanje.setTextSize(18);
+            tvPitanje.setPadding(10,10,10,10);
+
             llRoot.addView(tvPitanje);
 
             String[] answers = ProfActivity.questions.get(i).getAnswers();
@@ -171,6 +174,8 @@ public class Statistics extends AppCompatActivity {
 
                 TextView tvOpcija = new TextView(this);
                 tvOpcija.setText(answers[j] + " - " + p + "%");
+                tvOpcija.setTextSize(16);
+                tvOpcija.setPadding(20,0,0,0);
                 llRoot.addView(tvOpcija);
 
             }

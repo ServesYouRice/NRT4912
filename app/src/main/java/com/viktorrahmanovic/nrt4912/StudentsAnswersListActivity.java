@@ -31,15 +31,17 @@ public class StudentsAnswersListActivity extends AppCompatActivity {
         for (int i = 0; i < ProfActivity.answers[studentId].size(); i++) {
             LinearLayout llQuestion = new LinearLayout(this);
             llQuestion.setBackgroundColor(Color.WHITE);
-            LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300);
+            llQuestion.setPadding(0,0,0,10);
+            LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             llp.setMargins(10, 10, 10, 10);
             llQuestion.setLayoutParams(llp);
+            llQuestion.setOrientation(LinearLayout.VERTICAL);
+
 
             Question currentQuestion = ProfActivity.answers[studentId].get(i);
             TextView tvQuestion = new TextView(this);
-            tvQuestion.setSingleLine(false);
-            tvQuestion.setLines(3);
-            tvQuestion.setText((i + 1) + ". " + currentQuestion.getQuestionText() + "\n");
+
+            tvQuestion.setText((i + 1) + ". " + currentQuestion.getQuestionText());
             tvQuestion.setTextSize(18);
             tvQuestion.setPadding(10,10,10,10);
             llQuestion.addView(tvQuestion);
@@ -47,10 +49,11 @@ public class StudentsAnswersListActivity extends AppCompatActivity {
             Question currentAnswer = ProfActivity.answers[studentId].get(i);
             TextView tvAnswer = new TextView(this);
             tvAnswer.setTextSize(18);
+            tvAnswer.setPadding(20,0,0,0);
             llQuestion.addView(tvAnswer);
 
             if (currentAnswer.getClass().equals(TextQuestion.class)) {
-                tvAnswer.setText("\nOdgovor: " + ((TextQuestion) currentAnswer).getAnswerText());
+                tvAnswer.setText("Odgovor: " + ((TextQuestion) currentAnswer).getAnswerText());
 
             } else if (currentAnswer.getClass().equals(RadioQuestion.class)) {
 

@@ -29,7 +29,7 @@ public class CheckboxQuestion extends Question {
         String answersText= "";
         for (int i=0; i<selectedAnswers.length;i++) {
             if(selectedAnswers[i]>0) {
-                answersText += answers[i] + "/n";
+                answersText += answers[i] + "; ";
             }
         }
 
